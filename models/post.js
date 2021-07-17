@@ -1,4 +1,3 @@
-const { Double } = require("mongodb");
 const mongoose = require("mongoose");
 
 var postSchema = new mongoose.Schema({
@@ -13,6 +12,18 @@ var postSchema = new mongoose.Schema({
   user_shared_post: {
     type: Array,
     default: [],
+  },
+  unique_views: {
+    type: Number,
+    default: 0,
+  },
+  unique_comments: {
+    type: Number,
+    default: 0,
+  },
+  unique_shares: {
+    type: Number,
+    default: 0,
   },
 });
 module.exports = mongoose.model("Post", postSchema);
